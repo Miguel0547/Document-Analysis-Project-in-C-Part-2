@@ -1,0 +1,164 @@
+SWEN-250 Document Analysis Journal
+
+Implement these functions in the order below.
+
+Your name:Miguel Reyes
+
+================================================================
+process_word
+Start
+Estimated Time	01 : 30 
+Plan:
+(Order of implementation, testing approach, etc.)
+1) Check if the list is null.
+2) Check if the word is null and empty
+3) Check if the list is empty and if so we want to add the node
+   to the head of the list using the linked_list object file 
+   provided.
+4) If list is not empty find the word in the list. If not found
+   add it to the list otherwise increment its word count.
+Complete
+Actual Time	01 : 30
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+I did not struggle much implementing this function. I would say 
+that I wish I would of built my executable more often before 
+writing out a bunch of code. It would of saved me time.
+
+================================================================
+get_first_word
+Start
+Estimated Time	01 : 30
+Plan:
+(Order of implementation, testing approach, etc.)
+1) Check if list is null, if so return 0 
+2) Check if the p_head is null, if so return 0
+3) If the 2 above are false then we want to grab the p-heads
+   word_entry struct and assign its data members to the local
+   struct 
+4) Return the local struct created
+Complete
+Actual Time	01 : 30
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+Everything went as described above. The only concern I have is
+that after implementing this function my tests pass but I get 
+a core dump for the following tests in get_next_word. I am not
+sure if it has to do with my implementation here.
+
+================================================================
+get_next_word
+Start
+Estimated Time	01 : 30
+Plan:
+(Order of implementation, testing approach, etc.)
+1) Check if list is null, if so return struct with word count 0
+2) Check if we're at the end of the list or the list is empty
+   if so return struct with word count 0
+3) If 2 above are flase then we want to grab the current nodes
+   word entry struct and assign its data members to the local 
+   struct.
+4) Finally update pointer to current node
+Complete
+Actual Time	00 : 30
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+Went as planned except for my condition checking if current null
+is valid. Originally I was failing test 20 because my condition 
+would not let me access the last node of the list. So changed 
+the condition.
+
+================================================================
+get_last_word
+Start
+Estimated Time	00 : 25
+Plan:
+(Order of implementation, testing approach, etc.)
+Same exact process as the get first word function except
+we're dealing with the tail node.
+Complete
+Actual Time	00 : 02
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+Exactly as described in my plan. 
+
+================================================================
+get_prev_word
+Start
+Estimated Time	00 : 25
+Plan:
+(Order of implementation, testing approach, etc.)
+Same exact process as the get next word function except we're 
+working backwards. So we're updating the current nodes back-
+wards.
+Complete
+Actual Time	00 : 10
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+Pretty much as expected. Minor tweak of the condition statement.
+
+================================================================
+read_file through test 56
+Start
+Estimated Time	01 : 00
+Plan:
+(Order of implementation, testing approach, etc.)
+1) Check that the chars are valid - invalid chars are '.', ','
+   and any char considered a white space.
+2) When we reach a white space check that the char before is not
+   a white space and if its not then its word so process it
+Complete
+Actual Time	01 : 30
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+The problem I had was checking when a white space would occur 
+back to back. 
+
+================================================================
+read_file MLK_dream_excerpt only
+Start
+Estimated Time	01 : 00 
+Plan:
+(Order of implementation, testing approach, etc.)
+My read file from above pass all tests of read file
+Complete
+Actual Time	01 : 30
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+No problems here.
+
+================================================================
+write_unique_word_list_to_csv_file
+Start
+Estimated Time	01 : 00
+Plan:
+(Order of implementation, testing approach, etc.)
+1) Write the header to the file
+2) While the current node is not null do the following
+3) write the word and the word count to the file
+Complete
+Actual Time	01 : 00
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+A problem that set me back was converting an int to a string.
+I had to use the sprintf function and I was getting an error 
+using a char pointer. But I changed it to be a constant array of 
+size 2 because I knew the list would not be longer than 255 words.
+I guess sprintf must know the size of the char array before inserting
+the string and that is why the constant char array worked. 
+
+================================================================
+Add four unit tests to the unit_tests_student.c file
+Start
+Estimated Time	01 : 00
+Plan:
+(Order of implementation, testing approach, etc.)
+Look over the unit tests for the linked list and the unit tests
+for this project and see what I could put together.
+Complete
+Actual Time	01 : 00
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+Went exactly as planned, no problems really.
+
+================================================================
